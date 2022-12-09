@@ -59,7 +59,7 @@ def solve_part_1(tree_dir: dict):
 
 
 def solve_part_2(tree_dir: dict):
-    """"
+    """
     Solution to Part 2 of Day 7
     """
     root_dir_space = sum_files_in_directory(tree_dir)
