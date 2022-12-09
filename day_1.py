@@ -35,6 +35,7 @@ def solve_part_2(input_data: List[Any], k: int = 3):
     calorie_list = []
 
     for cal in input_data:
+        # Space is the one that separates the elves
         if cal:
             calories += int(cal)
         else:
