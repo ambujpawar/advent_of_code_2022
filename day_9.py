@@ -1,6 +1,6 @@
 from utils.read_input import read_input
 
-tailMoves = {
+tail_moves = {
     (0, 2): (0, 1),  # R
     (0, -2): (0, -1),  # L
     (2, 0): (1, 0),  # U
@@ -44,8 +44,8 @@ def solve_part_1(input_data):
             # Move tail
             if (max(abs(head_x-tail_x), abs(head_y-tail_y)) > 1):
                 diff = (head_x-tail_x, head_y-tail_y)
-                tail_x += tailMoves[diff][0]
-                tail_y += tailMoves[diff][1]
+                tail_x += tail_moves[diff][0]
+                tail_y += tail_moves[diff][1]
 
             visited.add((tail_x, tail_y))
     return len(visited)
@@ -82,8 +82,8 @@ def solve_part_2(input_data):
                         [0], all_knots[i-1][1] - all_knots[i][1],
                     )
                     all_knots[i] = (
-                        all_knots[i][0] + tailMoves[diff]
-                        [0], all_knots[i][1] + tailMoves[diff][1],
+                        all_knots[i][0] + tail_moves[diff]
+                        [0], all_knots[i][1] + tail_moves[diff][1],
                     )
 
             visited.add(all_knots[9])
