@@ -31,6 +31,8 @@ class Monkey:
             old = self.items.pop(0)
             worry = eval(self.operation)
             if use_lcm:
+                # (a+b) % lcm = (a%lcm + b%lcm) % lcm
+                # (a*b) % lcm = (a%lcm * b%lcm) % lcm
                 worry %= self.lcm
             else:
                 # Normal Case
