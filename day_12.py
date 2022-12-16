@@ -48,8 +48,8 @@ def breadth_first_search(start_pos, end_pos, grid_data):
         for r_inc, c_inc in valid_moves:
             new_r, new_c = curr_r + r_inc, curr_c + c_inc
             if 0 <= new_r < rows and 0 <= new_c < cols and \
-                grid_data[new_r][new_c] <= grid_data[curr_r][curr_c] + 1 and \
-                (new_r, new_c) not in visited:
+                    grid_data[new_r][new_c] <= grid_data[curr_r][curr_c] + 1 and \
+                    (new_r, new_c) not in visited:
                 visited.add((new_r, new_c))
                 queue.append((num_steps + 1, [new_r, new_c]))
 
@@ -86,7 +86,8 @@ def main():
     Main function
     """
     input_data = make_grid('data/day_12.txt')
-    # print(solve_part_1(input_data))
+    print(solve_part_1(input_data))
+    input_data = make_grid('data/day_12.txt')
     print(solve_part_2(input_data))
 
 
